@@ -1,0 +1,8 @@
+﻿content = open('agent.py', 'r', encoding='utf-8').read()
+content = content.replace('from langchain_openai import ChatOpenAI', 'from langchain_groq import ChatGroq')
+content = content.replace('ChatOpenAI', 'ChatGroq')
+content = content.replace('OPENAI_API_KEY', 'GROQ_API_KEY')
+content = content.replace('gpt-4o-mini', 'llama-3.3-70b-versatile')
+content = content.replace('gpt-4o', 'llama-3.3-70b-versatile')
+open('agent.py', 'w', encoding='utf-8').write(content)
+print('Done! agent.py updated.')
