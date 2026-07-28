@@ -17,25 +17,7 @@ An AI-powered Business Intelligence agent that integrates dynamically with **mon
 ## 🏗️ Architecture Overview
 
 The system follows a modular 3-layer architecture[cite: 9]:
-                 ┌────────────────────────┐
-                 │   User Interface UI    │
-                 │  (Chainlit Frontend)   │
-                 └───────────┬────────────┘
-                             │
-                             ▼
-                 ┌────────────────────────┐
-                 │   LangGraph BI Agent   │
-                 │  (Groq / Llama 3.3-70B)│
-                 └───────────┬────────────┘
-                             │
-             ┌───────────────┴───────────────┐
-             ▼                               ▼
- ┌───────────────────────┐       ┌───────────────────────┐
- │  Work Order Tracker   │       │     Deal Tracker      │
- │  (monday.com Board)   │       │  (monday.com Board)   │
- └───────────────────────┘       └───────────────────────┘
-
- 1. **Interface Layer (`app.py`)**: Manages chat sessions, displays status spinners, and triggers agent workflows using Chainlit.
+1. **Interface Layer (`app.py`)**: Manages chat sessions, displays status spinners, and triggers agent workflows using Chainlit.
 2. **Orchestration Layer (`agent.py`)**: Powered by **LangGraph** and **Groq (Llama 3.3 70B)**[cite: 7]. It routes intent (`work_orders`, `deals`, `both`, or `direct`), pulls board contexts, and constructs markdown analytical summaries[cite: 7].
 3. **Data Layer (`monday_client.py`)**: Executes GraphQL calls against monday.com, normalizes date/currency schema differences, and calculates data completeness metrics[cite: 10].
 
