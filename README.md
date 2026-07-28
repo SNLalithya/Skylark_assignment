@@ -72,13 +72,7 @@ To set up the boards in monday.com manually or using the sample CSV files:
 
 ## 🚀 Local Installation & Execution
 
-1. **Clone the Repository**:
-   ```bash
-   git clone <YOUR_GIT_REPOSITORY_URL>
-   cd skylark-bi-agent
-
-
-   Set Up Environment Variables:
+Set Up Environment Variables:
 Copy .env.example to .env and fill in your API credentials:
 
 Bash
